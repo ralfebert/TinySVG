@@ -9,18 +9,22 @@ import WebColor
 public struct SVGView: View {
 
     public let node: SVGNode?
+    /// Passed on to `Canvas`.
+    public let rendersAsynchronously: Bool
 
-    public init(contentsOf url: URL) {
+    public init(contentsOf url: URL, rendersAsynchronously: Bool = false) {
         self.node = SVGParser.parse(contentsOf: url)
+        self.rendersAsynchronously = rendersAsynchronously
     }
 
-    public init(svg: SVGNode) {
+    public init(svg: SVGNode, rendersAsynchronously: Bool = false) {
         self.node = svg
+        self.rendersAsynchronously = rendersAsynchronously
     }
 
     public var body: some View {
         if let node {
-            Canvas(rendersAsynchronously: true) { ctx, size in
+            Canvas(rendersAsynchronously: rendersAsynchronously) { ctx, size in
                 ctx.withCGContext { ctx in
                     node.draw(ctx: ctx, size: size)
                 }
