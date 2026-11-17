@@ -1,3 +1,7 @@
---swiftversion 5.10
---disable preferForLoop,unusedArguments,blankLinesAtStartOfScope,blankLinesAtEndOfScope,andOperator,redundantSelf,redundantStaticSelf,redundantInternal,preferKeyPath,redundantLet,swiftTestingTestCaseNames,trailingClosures,redundantVariable,redundantViewBuilder
+--swift-version 6.4
+--language-mode 5
+--trailing-commas collections-only
+--doc-comments preserve
+--file-macro "#fileID"
+--disable preferForLoop,unusedArguments,blankLinesAtStartOfScope,blankLinesAtEndOfScope,andOperator,redundantSelf,redundantStaticSelf,redundantInternal,preferKeyPath,redundantLet,swiftTestingTestCaseNames,trailingClosures,redundantVariable,contentBuilder,wrapIfStatementBodies,wrapIfExpressionBodies,wrapLoopBodies,repeatedGuard
 --header "MIT license\nDerived from https://github.com/exyte/SVGView"

@@ -27,6 +27,6 @@ test-ios filter="":
 	if [ -n "{{filter}}" ]; then ARGS="-only-testing:TinySVGViewTests/{{filter}}"; fi
 	xcodebuild -scheme TinySVG-Package -destination "platform=iOS Simulator,id=$TEST_SIM_ID" test -collect-test-diagnostics never $ARGS 2>&1 | xcbeautify --disable-logging
 
-# Options are in .swiftformat.
+# Options come from .swiftformat in the project directory.
 format:
 	swiftformat Source Tests
